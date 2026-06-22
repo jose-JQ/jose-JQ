@@ -1,10 +1,18 @@
 # 👋 Hi, I'm José Quiros ([@jose-JQ](https://github.com/jose-JQ))
 
-🎓 **Computer Engineering Student** | 🤖 AI & Machine Learning Enthusiast | 💡 Tech Innovator in Progress
+I'm highly passionate about computer science, driven by the power of **technological innovation** and the potential of **Data Science**, **Machine Learning**, and **Artificial Intelligence** to solve real-world problems.
 
-I'm a passionate Computer Engineering student driven by the power of **technological innovation** and the potential of **data science**, **machine learning**, and **artificial intelligence** to solve real-world problems.  
-I’m known for my **curiosity**, **creative problem-solving**, and **collaborative mindset**, always seeking to deliver high-impact, effective solutions.
+Currently, I focus on bridging the gap between raw data and actionable intelligence—whether that involves designing robust ETL pipelines, exploring sequence-aware recommender systems, or building full-stack applications.
 
+### 🛠️ Tech Stack & Areas of Focus
+* **Data Science & ML:** Predictive analytics, time-series forecasting, and algorithmic fairness in AI.
+* **Business Intelligence:** Data integration, complex database management (Oracle, PostgreSQL), and automated reporting (Power BI).
+* **Software Development:** Building modular solutions with Python, React, TypeScript, and Node.js.
+
+### 🌟 Beyond the Code
+I’m extremely curious and always looking to expand my horizons. 
+
+> *"I love learning a lot of new things! I enjoy cooking, swimming, and playing video games. Computer science is truly impressive!"*
 ---
 
 ## 🚀 What I'm Passionate About
