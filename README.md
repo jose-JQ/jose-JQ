@@ -4,13 +4,9 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
-    <img src="assets/banner-light.svg" width="960" alt="José Quiros — animated city-pop profile banner">
+    <img src="assets/banner-light.svg" width="960" alt="José Quiros — a portrait that moves from a photograph to a point cloud, contours, and a mosaic">
   </picture>
 </a>
-
-<br>
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=22&duration=2800&pause=900&color=E23E78&center=true&vCenter=true&width=920&lines=Jos%C3%A9+Quiros+%E2%80%94+Data+Science+%26+Machine+Learning;Business+Intelligence+%C2%B7+ETL+%C2%B7+Power+BI;Python+%C2%B7+React+%C2%B7+TypeScript+%C2%B7+Node.js;Cybersecurity+%26+ethical+hacking;From+raw+data+to+actionable+intelligence" alt="José Quiros — rotating lines about data science, BI, full-stack, and security">
 
 </div>
 
@@ -31,92 +27,43 @@
   />
 </picture>
 
-## `$ whoami`
-
-<p align="center">
-  <img src="assets/whoami.svg" width="960" alt="City-pop terminal card for José Quiros">
-</p>
-
 I'm highly passionate about computer science, driven by the power of **technological innovation** and the potential of **Data Science**, **Machine Learning**, and **Artificial Intelligence** to solve real-world problems.
 
 Currently, I focus on bridging the gap between raw data and actionable intelligence—whether that involves designing robust ETL pipelines, exploring sequence-aware recommender systems, or building full-stack applications.
 
-<div align="center">
+## What I work on
 
-## `$ cat tech-stack.yaml`
-
-<table border="1" cellpadding="14" bgcolor="#12182C">
-  <thead>
-    <tr>
-      <th colspan="2" align="left"><code><font color="#F7F0F8">jose-JQ:~$ cat tech-stack.yaml</font></code></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td width="58%" valign="top"><code><font color="#C9B6FF">├─ ✦ data_science_&amp;_ml:</font></code><br><br>
-        <a href="https://github.com/jose-JQ/manpac"><img src="https://skillicons.dev/icons?i=python" alt="Python — manpac"></a>
-        <a href="https://github.com/jose-JQ/manpac"><img src="https://skillicons.dev/icons?i=pytorch" alt="PyTorch — manpac"></a>
-        <a href="https://github.com/jose-JQ/busqueda_ir"><img src="https://skillicons.dev/icons?i=sklearn" alt="scikit-learn — busqueda_ir"></a>
-        <a href="https://github.com/jose-JQ/manpac"><img src="assets/icons/pandas.svg" width="48" height="48" alt="pandas — manpac"></a>
-        <a href="https://github.com/jose-JQ/Interpolador-de-Funciones--ModSim"><img src="assets/icons/numpy.svg" width="48" height="48" alt="NumPy — Interpolador de Funciones"></a>
-        <a href="https://github.com/jose-JQ/manpac"><img src="https://skillicons.dev/icons?i=opencv" alt="OpenCV — manpac"></a>
-        <a href="https://github.com/jose-JQ/ir25a"><img src="assets/icons/jupyter.svg" width="48" height="48" alt="Jupyter — ir25a"></a>
-        <a href="https://github.com/jose-JQ/Interpolador-de-Funciones--ModSim"><img src="assets/icons/keras.svg" width="48" height="48" alt="Keras — Interpolador de Funciones"></a>
-        <a href="https://github.com/jose-JQ/manpac"><img src="assets/icons/streamlit.svg" width="48" height="48" alt="Streamlit — manpac"></a>
-      </td>
-      <td width="42%" valign="top"><code><font color="#C9B6FF">├─ ▣ databases_&amp;_bi:</font></code><br><br>
-        <img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL">
-        <img src="assets/icons/oracle.svg" width="48" height="48" alt="Oracle">
-        <img src="assets/icons/powerbi.svg" width="48" height="48" alt="Power BI">
-        <a href="https://github.com/jose-JQ/manpac"><img src="https://skillicons.dev/icons?i=sqlite" alt="SQLite — manpac"></a>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" valign="top"><code><font color="#C9B6FF">├─ ⚙ full_stack:</font></code><br><br>
-        <a href="https://github.com/jose-JQ/busqueda_ir"><img src="https://skillicons.dev/icons?i=react" alt="React — busqueda_ir"></a>
-        <a href="https://github.com/jose-JQ/hci_tron_game"><img src="https://skillicons.dev/icons?i=ts" alt="TypeScript — hci_tron_game"></a>
-        <a href="https://github.com/jose-JQ/Fueguito"><img src="https://skillicons.dev/icons?i=js" alt="JavaScript — Fueguito"></a>
-        <a href="https://github.com/jose-JQ/rag_multimodal"><img src="https://skillicons.dev/icons?i=nodejs" alt="Node.js — rag_multimodal"></a>
-        <a href="https://github.com/jose-JQ/busqueda_ir"><img src="https://skillicons.dev/icons?i=fastapi" alt="FastAPI — busqueda_ir"></a>
-        <a href="https://github.com/jose-JQ/hci_tron_game"><img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind CSS — hci_tron_game"></a>
-        <a href="https://github.com/jose-JQ/Fueguito"><img src="https://skillicons.dev/icons?i=html" alt="HTML — Fueguito"></a>
-        <a href="https://github.com/jose-JQ/Fueguito"><img src="https://skillicons.dev/icons?i=css" alt="CSS — Fueguito"></a>
-        <a href="https://github.com/jose-JQ/AppVuelo"><img src="https://skillicons.dev/icons?i=java" alt="Java — AppVuelo"></a>
-        <a href="https://github.com/jose-JQ/STARFALL_DRIFT_2024A_GR1CC_GR7"><img src="https://skillicons.dev/icons?i=cpp" alt="C++ — STARFALL DRIFT"></a>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" valign="top"><code><font color="#C9B6FF">╰─ ⌁ exploring:</font></code><br><br>
-        <img src="assets/icons/security.svg" width="48" height="48" alt="Cybersecurity and ethical hacking">
-        <img src="https://skillicons.dev/icons?i=git" alt="Git">
-      </td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td colspan="2"><code><font color="#93A0BD">status: building&nbsp;&nbsp;·&nbsp;&nbsp;focus: data · ml · full-stack</font></code></td>
-    </tr>
-  </tfoot>
-</table>
-
-</div>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/practice-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/practice-light.svg">
+    <img src="assets/practice-light.svg" width="960" alt="Four threads of José Quiros's work: data and models, business intelligence, products, and security">
+  </picture>
+</p>
 
 ### 🛠️ Tech Stack & Areas of Focus
 * **Data Science & ML:** Predictive analytics, time-series forecasting, and algorithmic fairness in AI.
 * **Business Intelligence:** Data integration, complex database management (Oracle, PostgreSQL), and automated reporting (Power BI).
 * **Software Development:** Building modular solutions with Python, React, TypeScript, and Node.js.
 
-## `$ cat skills-radar.log`
+A few of those threads are public:
+
+- [manpac](https://github.com/jose-JQ/manpac) — reading vehicle invoices with models, then checking the result
+- [Búsqueda IR](https://github.com/jose-JQ/busqueda_ir) — TF-IDF and BM25, with a React interface
+- [Quantic Search](https://github.com/jose-JQ/rag_multimodal) — retrieval from text and images together
+- [hci_tron_game](https://github.com/jose-JQ/hci_tron_game) — a game in TypeScript, with a small API beside it
+- [Fueguito](https://github.com/jose-JQ/Fueguito) — a little flame that follows the cursor
+- [Interpolador de funciones](https://github.com/jose-JQ/Interpolador-de-Funciones--ModSim) — an acoustic model
+
+## Where my attention goes
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/radar-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/radar-light.svg">
-    <img src="assets/radar-light.svg" width="460" alt="José Quiros skill radar">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/attention-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/attention-light.svg">
+    <img src="assets/attention-light.svg" width="720" alt="A self-rated sketch of where José Quiros spends attention">
   </picture>
 </p>
-
-<p align="center"><sub><code>signals: data_skill_radar · self_rated · status: healthy</code></sub></p>
 
 ### 🌟 Beyond the Code
 I’m extremely curious and always looking to expand my horizons.
