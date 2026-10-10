@@ -10,6 +10,24 @@
 
 </div>
 
+<p align="center">
+  <a href="https://github.com/jose-JQ">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/lang-en-on-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="assets/lang-en-on-light.svg">
+      <img src="assets/lang-en-on-light.svg" height="28" alt="English">
+    </picture>
+  </a>
+  &nbsp;
+  <a href="https://github.com/jose-JQ/jose-JQ/blob/main/README.es.md">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/lang-es-off-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="assets/lang-es-off-light.svg">
+      <img src="assets/lang-es-off-light.svg" height="28" alt="Español">
+    </picture>
+  </a>
+</p>
+
 I'm highly passionate about computer science, driven by the power of **technological innovation** and the potential of **Data Science**, **Machine Learning**, and **Artificial Intelligence** to solve real-world problems.
 
 Currently, I focus on bridging the gap between raw data and actionable intelligence—whether that involves designing robust ETL pipelines, exploring sequence-aware recommender systems, or building full-stack applications.

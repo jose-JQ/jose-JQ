@@ -200,18 +200,218 @@ def mosaic(avatar: Image.Image, theme: str) -> Image.Image:
     return image
 
 
-def build_frames(avatar: Image.Image, theme: str) -> list[tuple[str, str, str]]:
+def build_frames(avatar: Image.Image, theme: str) -> list[tuple[str, str]]:
     photo = photograph(avatar)
     cloud = point_cloud(avatar, theme)
     lines = contours(avatar, theme)
     tiles = mosaic(avatar, theme)
-    frames = [
-        ("Photograph", "image/jpeg", jpeg_b64(photo, 86)),
-        ("Point cloud", "image/png", png_b64(cloud)),
-        ("Contours", "image/png", png_b64(lines)),
-        ("Mosaic", "image/png", png_b64(tiles)),
+    return [
+        ("image/jpeg", jpeg_b64(photo, 86)),
+        ("image/png", png_b64(cloud)),
+        ("image/png", png_b64(lines)),
+        ("image/png", png_b64(tiles)),
     ]
-    return frames
+
+
+def _stroke(color: str, body: str, width: str = "1.5") -> str:
+    return (
+        f'<g fill="none" stroke="{color}" stroke-width="{width}" '
+        f'stroke-linecap="round" stroke-linejoin="round">{body}</g>'
+    )
+
+
+def icon_python(color: str, bg: str) -> str:
+    # Two snakes, filled, in one ink. Eyes are punched back to the plate.
+    return (
+        f'<path fill="{color}" fill-rule="evenodd" d="'
+        f"M8.6 11.2V7.4c0-2.2 1.5-3.8 4-3.8h3.2c2 0 3.4 1.3 3.4 3.2v3.2h-4.6"
+        f"V8.2c0-.7-.5-1.2-1.2-1.2h-.8c-.8 0-1.3.5-1.3 1.3V11.2H8.6z"
+        f"M5.4 9.2c-.8 0-1.4.6-1.4 1.4v1.6c0 1 .7 1.6 1.6 1.6h2.6V9.2H5.4z"
+        f"M15.4 12.8v3.8c0 2.2-1.5 3.8-4 3.8H8.2c-2 0-3.4-1.3-3.4-3.2v-3.2h4.6"
+        f"v1.8c0 .7.5 1.2 1.2 1.2h.8c.8 0 1.3-.5 1.3-1.3V12.8h2.7z"
+        f"M18.6 14.8c.8 0 1.4-.6 1.4-1.4v-1.6c0-1-.7-1.6-1.6-1.6h-2.6v4.6h2.8z"
+        f'"/>'
+        f'<circle cx="11.6" cy="5.8" r="0.7" fill="{bg}"/>'
+        f'<circle cx="12.4" cy="18.2" r="0.7" fill="{bg}"/>'
+    )
+
+
+def icon_sql(color: str, bg: str = "") -> str:
+    return _stroke(
+        color,
+        '<rect x="3.4" y="4.2" width="17.2" height="15.6" rx="1.2"/>'
+        '<path d="M3.4 8.8h17.2M9.2 8.8v11M14.9 8.8v11"/>',
+    )
+
+
+def icon_postgres(color: str, bg: str) -> str:
+    # Elephant head and trunk, original geometry, one ink.
+    return (
+        f'<ellipse cx="8.2" cy="11.2" rx="3.2" ry="3.8" fill="{color}"/>'
+        f'<ellipse cx="12.6" cy="10.4" rx="4.8" ry="4" fill="{color}"/>'
+        f'<path fill="{color}" d="M15.4 11.6c2 .2 3.4 1.4 3.4 3.1 0 1.6-1 2.4-.8 3.6'
+        f'.2 1.1 1 1.7 1.8 1.6-.2.8-1.5 1.2-2.3.4-1-.9-1.2-2.1-.9-3.3'
+        f'.2-.8.7-1.3.6-2.1-.1-1.1-.8-1.8-2-2z"/>'
+        f'<circle cx="13.8" cy="9.3" r="0.75" fill="{bg}"/>'
+    )
+
+
+def icon_oracle(color: str, bg: str = "") -> str:
+    return _stroke(color, '<circle cx="12" cy="12" r="6.3"/>', "2.15")
+
+
+def icon_powerbi(color: str, bg: str = "") -> str:
+    return _stroke(
+        color,
+        '<path d="M6 17V12.2" stroke-width="2.15"/>'
+        '<path d="M10.7 17V8.6" stroke-width="2.15"/>'
+        '<path d="M15.4 17V6.4" stroke-width="2.15"/>'
+        '<path d="M4.2 12.6c3.2-3.4 6-.6 11.4-6.2"/>'
+        '<path d="M4 17.2h15.6"/>',
+    )
+
+
+def icon_react(color: str, bg: str = "") -> str:
+    return _stroke(
+        color,
+        f'<circle cx="12" cy="12" r="1.55" fill="{color}" stroke="none"/>'
+        '<ellipse cx="12" cy="12" rx="8.6" ry="3.35"/>'
+        '<ellipse cx="12" cy="12" rx="8.6" ry="3.35" transform="rotate(60 12 12)"/>'
+        '<ellipse cx="12" cy="12" rx="8.6" ry="3.35" transform="rotate(120 12 12)"/>',
+    )
+
+
+def icon_typescript(color: str, bg: str = "") -> str:
+    return (
+        f'<g fill="none" stroke="{color}" stroke-width="1.5" stroke-linejoin="round">'
+        f'<rect x="3.3" y="3.3" width="17.4" height="17.4" rx="2"/>'
+        f'</g>'
+        f'<text x="12" y="15.8" text-anchor="middle" fill="{color}" '
+        f'font-family="{SANS}" font-size="8.2" font-weight="700">TS</text>'
+    )
+
+
+def icon_node(color: str, bg: str = "") -> str:
+    return _stroke(
+        color,
+        '<path d="M12 3.4 20 8v8L12 20.6 4 16V8z"/>'
+        '<path d="M12 8.2 16.2 10.6v4.8L12 17.8 7.8 15.4v-4.8z"/>',
+    )
+
+
+def icon_shield(color: str, bg: str = "") -> str:
+    return _stroke(
+        color,
+        f'<path d="M12 3.3 18.3 5.7v5.1c0 3.5-2.4 6-6.3 7.7-3.9-1.7-6.3-4.2-6.3-7.7V5.7z"/>'
+        f'<circle cx="12" cy="10.6" r="1.35"/>'
+        f'<path d="M12 11.9v2.5"/>',
+    )
+
+
+ICONS = (
+    ("python", icon_python, "teal"),
+    ("sql", icon_sql, "text"),
+    ("postgres", icon_postgres, "teal"),
+    ("oracle", icon_oracle, "earth"),
+    ("powerbi", icon_powerbi, "gold"),
+    ("react", icon_react, "teal"),
+    ("typescript", icon_typescript, "text"),
+    ("node", icon_node, "gold"),
+    ("shield", icon_shield, "earth"),
+)
+
+
+def icon_plate(theme: dict, x: float, y: float, w: float, h: float) -> str:
+    arm = 8
+    parts = [
+        f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{theme["plot"]}" stroke="{theme["line"]}"/>',
+        (
+            f'<path d="M{x} {y}h{arm}M{x} {y}v{arm}M{x + w} {y}h-{arm}M{x + w} {y}v{arm}'
+            f'M{x} {y + h}h{arm}M{x} {y + h}v-{arm}M{x + w} {y + h}h-{arm}M{x + w} {y + h}v-{arm}" '
+            f'fill="none" stroke="{theme["gold"]}" stroke-width="1.3"/>'
+        ),
+    ]
+    inset = 6
+    cell = (w - inset * 2) / len(ICONS)
+    cy = y + h / 2
+    for i, (_name, draw, key) in enumerate(ICONS):
+        cx = x + inset + cell * i + cell / 2
+        parts.append(
+            f'<g transform="translate({cx - 12:.2f} {cy - 12:.2f})">{draw(theme[key], theme["plot"])}</g>'
+        )
+    return "".join(parts)
+
+
+COPY = {
+    "en": {
+        "kicker": "FIG. 01  ·  PORTRAIT AS DATA",
+        "frames": ["Photograph", "Point cloud", "Contours", "Mosaic"],
+        "line1": "Learning, cooking, swimming,",
+        "line2": "games, and the work in between.",
+        "focus1": "Data science · machine learning",
+        "focus2": "Business intelligence · full-stack",
+        "focus3": "Cybersecurity, practiced with care",
+        "desc": "A data figure of José Quiros. His portrait moves from a photograph to a point cloud, contour lines, and a color mosaic.",
+        "practice_kicker": "FIG. 02  ·  PRACTICE",
+        "practice_aside": "FOUR THREADS",
+        "practice_label": "What José Quiros works on",
+        "practice_rows": [
+            ("01", "Data and models", "Python, PyTorch, scikit-learn, pandas, NumPy", "manpac · notebooks · an acoustic model"),
+            ("02", "Business intelligence", "ETL, Oracle, PostgreSQL, Power BI", "from raw tables to a report someone trusts"),
+            ("03", "Products", "React, TypeScript, Node.js, FastAPI", "search, small web things, a game or two"),
+            ("04", "Security", "Cybersecurity and ethical hacking", "curious, and careful about it"),
+        ],
+        "attention_kicker": "FIG. 03  ·  ATTENTION",
+        "attention_aside": "SELF-RATED · NOT A SCOREBOARD",
+        "attention_label": "Where José Quiros spends attention",
+        "attention_rows": [
+            ("Python", 90),
+            ("Data science", 86),
+            ("Machine learning", 82),
+            ("Full-stack", 76),
+            ("Business intelligence", 72),
+            ("Databases", 66),
+            ("Security", 58),
+        ],
+        "attention_note": "A sketch of public work and stated interests. The numbers are a feeling, not a certificate.",
+        "bar_x": 250,
+        "bar_w": 560,
+    },
+    "es": {
+        "kicker": "FIG. 01  ·  RETRATO EN DATOS",
+        "frames": ["Fotografía", "Nube de puntos", "Contornos", "Mosaico"],
+        "line1": "Aprender, cocinar, nadar,",
+        "line2": "los juegos, y el trabajo de por medio.",
+        "focus1": "Ciencia de datos · aprendizaje automático",
+        "focus2": "Inteligencia de negocios · full-stack",
+        "focus3": "Ciberseguridad, con cuidado",
+        "desc": "Una figura de datos de José Quiros. El retrato pasa de una fotografía a una nube de puntos, curvas de nivel y un mosaico.",
+        "practice_kicker": "FIG. 02  ·  PRÁCTICA",
+        "practice_aside": "CUATRO HILOS",
+        "practice_label": "En qué trabaja José Quiros",
+        "practice_rows": [
+            ("01", "Datos y modelos", "Python, PyTorch, scikit-learn, pandas, NumPy", "manpac · notebooks · un modelo acústico"),
+            ("02", "Inteligencia de negocios", "ETL, Oracle, PostgreSQL, Power BI", "de la tabla cruda al reporte en el que alguien confía"),
+            ("03", "Productos", "React, TypeScript, Node.js, FastAPI", "búsquedas, cosas pequeñas en la web, un juego o dos"),
+            ("04", "Seguridad", "Ciberseguridad y hacking ético", "con curiosidad, y con cuidado"),
+        ],
+        "attention_kicker": "FIG. 03  ·  ATENCIÓN",
+        "attention_aside": "A OJO · NO ES UN RANKING",
+        "attention_label": "Dónde pone la atención José Quiros",
+        "attention_rows": [
+            ("Python", 90),
+            ("Ciencia de datos", 86),
+            ("Aprendizaje automático", 82),
+            ("Full-stack", 76),
+            ("Inteligencia de negocios", 72),
+            ("Bases de datos", 66),
+            ("Seguridad", 58),
+        ],
+        "attention_note": "Un apunte del trabajo público y de lo que me importa. Los números son una intuición, no un certificado.",
+        "bar_x": 292,
+        "bar_w": 518,
+    },
+}
 
 
 def frame_opacity(index: int) -> tuple[str, str]:
@@ -231,11 +431,12 @@ def frame_opacity(index: int) -> tuple[str, str]:
     )
 
 
-def banner_svg(theme_name: str, frames: list[tuple[str, str, str]]) -> str:
+def banner_svg(theme_name: str, frames: list[tuple[str, str]], lang: str) -> str:
     t = THEMES[theme_name]
-    px, py, size = 56, 78, 400
+    c = COPY[lang]
+    px, py, size = 56, 76, 380
     layers = []
-    for i, (label, mime, data) in enumerate(frames):
+    for i, ((mime, data), label) in enumerate(zip(frames, c["frames"])):
         keys, vals = frame_opacity(i)
         layers.append(
             f'<g opacity="{"1" if i == 0 else "0"}">'
@@ -260,7 +461,7 @@ def banner_svg(theme_name: str, frames: list[tuple[str, str, str]]) -> str:
             f'stroke="{t["grid"]}" stroke-width="1"/>'
         )
     captions = []
-    for i, (label, _mime, _data) in enumerate(frames):
+    for i, label in enumerate(c["frames"]):
         keys, vals = frame_opacity(i)
         captions.append(
             f'<text x="{px}" y="{py + size + 28}" fill="{t["text"]}" font-family="{SANS}" '
@@ -273,7 +474,10 @@ def banner_svg(theme_name: str, frames: list[tuple[str, str, str]]) -> str:
     marks = []
     for i in range(4):
         keys, vals = frame_opacity(i)
-        x = px + 168 + i * 28
+        # Sit the ticks on the right of the caption row so longer
+        # Spanish labels ("NUBE DE PUNTOS") still clear them.
+        step = 26
+        x = px + size - (16 + 3 * step) + i * step
         marks.append(
             f'<rect x="{x}" y="{py + size + 18}" width="16" height="3" fill="{t["faint"]}"/>'
             f'<rect x="{x}" y="{py + size + 18}" width="16" height="3" fill="{t["gold"]}" '
@@ -295,14 +499,23 @@ def banner_svg(theme_name: str, frames: list[tuple[str, str, str]]) -> str:
             f'<animate attributeName="opacity" values="0.35;0.9;0.35" dur="{dur}" repeatCount="indefinite"/>'
             f"</circle>"
         )
+    caption_y = py + size + 28
+    plate_y = caption_y + 20
+    plate_h = 68
+    plate_bottom = plate_y + plate_h
+    frame_y = 32
+    frame_bottom = plate_bottom + 22
+    canvas_h = frame_bottom + 28
+    frame_h = frame_bottom - frame_y
+    plate = icon_plate(t, px, plate_y, size, plate_h)
     return f'''<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="{canvas_h}" viewBox="0 0 {1200} {canvas_h}" role="img" aria-labelledby="title desc">
   <title id="title">José Quiros</title>
-  <desc id="desc">A data figure of José Quiros. His portrait moves from a photograph to a point cloud, contour lines, and a color mosaic.</desc>
-  <rect width="1200" height="560" fill="{t["bg"]}"/>
-  <rect x="36" y="36" width="1128" height="488" fill="none" stroke="{t["line"]}"/>
-  <text x="56" y="62" fill="{t["gold"]}" font-family="{SANS}" font-size="12" letter-spacing="2.2">FIG. 01  ·  PORTRAIT AS DATA</text>
-  <text x="1144" y="62" text-anchor="end" fill="{t["muted"]}" font-family="{SANS}" font-size="12" letter-spacing="1.8">ECUADOR</text>
+  <desc id="desc">{esc(c["desc"])}</desc>
+  <rect width="1200" height="{canvas_h}" fill="{t["bg"]}"/>
+  <rect x="36" y="{frame_y}" width="1128" height="{frame_h}" fill="none" stroke="{t["line"]}"/>
+  <text x="56" y="58" fill="{t["gold"]}" font-family="{SANS}" font-size="12" letter-spacing="2.2">{esc(c["kicker"])}</text>
+  <text x="1144" y="58" text-anchor="end" fill="{t["muted"]}" font-family="{SANS}" font-size="12" letter-spacing="1.8">ECUADOR</text>
 
   <rect x="{px - 8}" y="{py - 8}" width="{size + 16}" height="{size + 16}" fill="{t["plot"]}" stroke="{t["line"]}"/>
   <clipPath id="plot"><rect x="{px}" y="{py}" width="{size}" height="{size}"/></clipPath>
@@ -313,29 +526,26 @@ def banner_svg(theme_name: str, frames: list[tuple[str, str, str]]) -> str:
   <path d="M{px} {py}h14M{px} {py}v14M{px + size} {py}h-14M{px + size} {py}v14M{px} {py + size}h14M{px} {py + size}v-14M{px + size} {py + size}h-14M{px + size} {py + size}v-14" fill="none" stroke="{t["gold"]}" stroke-width="1.4"/>
   {''.join(captions)}
   {''.join(marks)}
+  {plate}
 
-  <text x="520" y="168" fill="{t["text"]}" font-family="{SERIF}" font-size="64">José</text>
-  <text x="520" y="242" fill="{t["text"]}" font-family="{SERIF}" font-size="64">Quiros</text>
-  <rect x="520" y="268" width="64" height="3" fill="{t["gold"]}"/>
-  <text x="520" y="312" fill="{t["muted"]}" font-family="{SANS}" font-size="18">Learning, cooking, swimming,</text>
-  <text x="520" y="338" fill="{t["muted"]}" font-family="{SANS}" font-size="18">games, and the work in between.</text>
-  <text x="520" y="392" fill="{t["teal"]}" font-family="{SANS}" font-size="15">Data science · machine learning</text>
-  <text x="520" y="418" fill="{t["text"]}" font-family="{SANS}" font-size="15">Business intelligence · full-stack</text>
-  <text x="520" y="444" fill="{t["earth"]}" font-family="{SANS}" font-size="15">Cybersecurity, practiced with care</text>
-  <text x="520" y="500" fill="{t["faint"]}" font-family="{SANS}" font-size="13" letter-spacing="1.6">@jose-JQ</text>
+  <text x="500" y="188" fill="{t["text"]}" font-family="{SERIF}" font-size="64">José</text>
+  <text x="500" y="262" fill="{t["text"]}" font-family="{SERIF}" font-size="64">Quiros</text>
+  <rect x="500" y="288" width="64" height="3" fill="{t["gold"]}"/>
+  <text x="500" y="332" fill="{t["muted"]}" font-family="{SANS}" font-size="18">{esc(c["line1"])}</text>
+  <text x="500" y="358" fill="{t["muted"]}" font-family="{SANS}" font-size="18">{esc(c["line2"])}</text>
+  <text x="500" y="408" fill="{t["teal"]}" font-family="{SANS}" font-size="15">{esc(c["focus1"])}</text>
+  <text x="500" y="434" fill="{t["text"]}" font-family="{SANS}" font-size="15">{esc(c["focus2"])}</text>
+  <text x="500" y="460" fill="{t["earth"]}" font-family="{SANS}" font-size="15">{esc(c["focus3"])}</text>
+  <text x="500" y="536" fill="{t["faint"]}" font-family="{SANS}" font-size="13" letter-spacing="1.6">@jose-JQ</text>
   {''.join(dots)}
 </svg>
 '''
 
 
-def practice_svg(theme_name: str) -> str:
+def practice_svg(theme_name: str, lang: str) -> str:
     t = THEMES[theme_name]
-    rows = [
-        ("01", "Data and models", "Python, PyTorch, scikit-learn, pandas, NumPy", "manpac · notebooks · an acoustic model"),
-        ("02", "Business intelligence", "ETL, Oracle, PostgreSQL, Power BI", "from raw tables to a report someone trusts"),
-        ("03", "Products", "React, TypeScript, Node.js, FastAPI", "search, small web things, a game or two"),
-        ("04", "Security", "Cybersecurity and ethical hacking", "curious, and careful about it"),
-    ]
+    c = COPY[lang]
+    rows = c["practice_rows"]
     body = []
     y = 108
     for num, title, tools, note in rows:
@@ -348,29 +558,22 @@ def practice_svg(theme_name: str) -> str:
         )
         y += 96
     return f'''<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-label="What José Quiros works on">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-label="{esc(c["practice_label"])}">
   <rect width="960" height="520" fill="{t["bg"]}"/>
-  <text x="48" y="48" fill="{t["gold"]}" font-family="{SANS}" font-size="12" letter-spacing="2.2">FIG. 02  ·  PRACTICE</text>
-  <text x="912" y="48" text-anchor="end" fill="{t["faint"]}" font-family="{SANS}" font-size="12" letter-spacing="1.4">FOUR THREADS</text>
+  <text x="48" y="48" fill="{t["gold"]}" font-family="{SANS}" font-size="12" letter-spacing="2.2">{esc(c["practice_kicker"])}</text>
+  <text x="912" y="48" text-anchor="end" fill="{t["faint"]}" font-family="{SANS}" font-size="12" letter-spacing="1.4">{esc(c["practice_aside"])}</text>
   {''.join(body)}
 </svg>
 '''
 
 
-def attention_svg(theme_name: str) -> str:
+def attention_svg(theme_name: str, lang: str) -> str:
     t = THEMES[theme_name]
-    rows = [
-        ("Python", 90),
-        ("Data science", 86),
-        ("Machine learning", 82),
-        ("Full-stack", 76),
-        ("Business intelligence", 72),
-        ("Databases", 66),
-        ("Security", 58),
-    ]
+    c = COPY[lang]
+    rows = c["attention_rows"]
     label_x = 36
-    bar_x = 250
-    bar_w = 560
+    bar_x = c["bar_x"]
+    bar_w = c["bar_w"]
     body = []
     for i, (label, score) in enumerate(rows):
         y = 86 + i * 52
@@ -385,12 +588,30 @@ def attention_svg(theme_name: str) -> str:
             f'<text x="{bar_x + bar_w + 16}" y="{y + 12}" fill="{t["muted"]}" font-family="{SANS}" font-size="13">{score}</text>'
         )
     return f'''<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="500" viewBox="0 0 960 500" role="img" aria-label="Where José Quiros spends attention">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="500" viewBox="0 0 960 500" role="img" aria-label="{esc(c["attention_label"])}">
   <rect width="960" height="500" fill="{t["bg"]}"/>
-  <text x="36" y="42" fill="{t["gold"]}" font-family="{SANS}" font-size="12" letter-spacing="2.2">FIG. 03  ·  ATTENTION</text>
-  <text x="924" y="42" text-anchor="end" fill="{t["faint"]}" font-family="{SANS}" font-size="12">SELF-RATED · NOT A SCOREBOARD</text>
+  <text x="36" y="42" fill="{t["gold"]}" font-family="{SANS}" font-size="12" letter-spacing="2.2">{esc(c["attention_kicker"])}</text>
+  <text x="924" y="42" text-anchor="end" fill="{t["faint"]}" font-family="{SANS}" font-size="12">{esc(c["attention_aside"])}</text>
   {''.join(body)}
-  <text x="36" y="470" fill="{t["muted"]}" font-family="{SANS}" font-size="13">A sketch of public work and stated interests. The numbers are a feeling, not a certificate.</text>
+  <text x="36" y="470" fill="{t["muted"]}" font-family="{SANS}" font-size="13">{esc(c["attention_note"])}</text>
+</svg>
+'''
+
+
+def lang_badge(label: str, theme_name: str, active: bool) -> str:
+    t = THEMES[theme_name]
+    stroke = t["gold"] if active else t["line"]
+    color = t["gold"] if active else t["muted"]
+    rule = (
+        f'<rect x="40" y="22" width="38" height="2" fill="{t["gold"]}"/>'
+        if active
+        else ""
+    )
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="118" height="28" viewBox="0 0 118 28" role="img" aria-label="{esc(label)}">
+  <rect x="0.5" y="0.5" width="117" height="27" fill="{t["bg"]}" stroke="{stroke}"/>
+  <text x="59" y="17.5" text-anchor="middle" fill="{color}" font-family="{SANS}" font-size="12" letter-spacing="0.4">{esc(label)}</text>
+  {rule}
 </svg>
 '''
 
@@ -399,13 +620,20 @@ def main() -> None:
     avatar = load_avatar()
     for theme in ("dark", "light"):
         frames = build_frames(avatar, theme)
-        path = OUT / f"banner-{theme}.svg"
-        path.write_text(banner_svg(theme, frames), encoding="utf-8")
-        print(f"{path.name}: {path.stat().st_size / 1024:.1f} KB")
-        for name, builder in (("practice", practice_svg), ("attention", attention_svg)):
-            out = OUT / f"{name}-{theme}.svg"
-            out.write_text(builder(theme), encoding="utf-8")
-            print(f"{out.name}: {out.stat().st_size / 1024:.1f} KB")
+        for lang in ("en", "es"):
+            suffix = "" if lang == "en" else "-es"
+            path = OUT / f"banner{suffix}-{theme}.svg"
+            path.write_text(banner_svg(theme, frames, lang), encoding="utf-8")
+            print(f"{path.name}: {path.stat().st_size / 1024:.1f} KB")
+            for name, builder in (("practice", practice_svg), ("attention", attention_svg)):
+                out = OUT / f"{name}{suffix}-{theme}.svg"
+                out.write_text(builder(theme, lang), encoding="utf-8")
+                print(f"{out.name}: {out.stat().st_size / 1024:.1f} KB")
+        for code, label in (("en", "English"), ("es", "Español")):
+            for state, active in (("on", True), ("off", False)):
+                out = OUT / f"lang-{code}-{state}-{theme}.svg"
+                out.write_text(lang_badge(label, theme, active), encoding="utf-8")
+                print(f"{out.name}: {out.stat().st_size} B")
 
 
 if __name__ == "__main__":
