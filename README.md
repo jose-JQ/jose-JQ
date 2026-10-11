@@ -10,81 +10,9 @@
 
 </div>
 
-<details>
-<summary>Leer en español</summary>
-
-<div align="center">
-
-<a href="https://github.com/jose-JQ">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-es-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/banner-es-light.svg">
-    <img src="assets/banner-es-light.svg" width="960" alt="José Quiros — un retrato que pasa de una fotografía a una nube de puntos, contornos y un mosaico">
-  </picture>
-</a>
-
-</div>
-
-Me apasiona la computación. Me mueve lo que puede la **innovación tecnológica**, y lo que la **ciencia de datos**, el **aprendizaje automático** y la **inteligencia artificial** alcanzan a resolver cuando el problema es concreto.
-
-Hoy trabajo en acortar la distancia entre el dato crudo y una decisión que sirva: diseñar pipelines de ETL que aguanten, explorar recomendadores que miran la secuencia, o construir aplicaciones full-stack.
-
-## En qué trabajo
-
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/practice-es-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/practice-es-light.svg">
-    <img src="assets/practice-es-light.svg" width="960" alt="Cuatro hilos del trabajo de José Quiros: datos y modelos, inteligencia de negocios, productos y seguridad">
-  </picture>
+<a href="https://github.com/jose-JQ"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/toggle-en-on-dark.svg"><img alt="English" width="110" height="44" src="assets/toggle-en-on-light.svg"></picture></a><a href="https://github.com/jose-JQ/jose-JQ/tree/main/es#readme"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/toggle-es-off-dark.svg"><img alt="Español" width="110" height="44" src="assets/toggle-es-off-light.svg"></picture></a>
 </p>
-
-### Foco
-
-* **Ciencia de datos y ML:** analítica predictiva, pronóstico de series de tiempo y equidad algorítmica.
-* **Inteligencia de negocios:** integración de datos, bases exigentes (Oracle, PostgreSQL) y reportes automáticos con Power BI.
-* **Desarrollo de software:** soluciones modulares con Python, React, TypeScript y Node.js.
-
-### En público
-
-- [manpac](https://github.com/jose-JQ/manpac) — leer facturas de vehículos con modelos, y después revisar el resultado
-- [Búsqueda IR](https://github.com/jose-JQ/busqueda_ir) — TF-IDF y BM25, con una interfaz en React
-- [Quantic Search](https://github.com/jose-JQ/rag_multimodal) — recuperar a partir de texto e imágenes a la vez
-- [hci_tron_game](https://github.com/jose-JQ/hci_tron_game) — un juego en TypeScript, con una API pequeña al lado
-- [Fueguito](https://github.com/jose-JQ/Fueguito) — una llamita que sigue al cursor
-- [Interpolador de funciones](https://github.com/jose-JQ/Interpolador-de-Funciones--ModSim) — un modelo acústico
-
-## Dónde va mi atención
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/attention-es-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/attention-es-light.svg">
-    <img src="assets/attention-es-light.svg" width="720" alt="Un apunte, a ojo, de dónde José Quiros pone la atención">
-  </picture>
-</p>
-
-## Más allá del código
-
-Tengo mucha curiosidad y siempre estoy buscando ampliar lo que sé.
-
-> *"¡Me encanta aprender un montón de cosas nuevas! Disfruto cocinar, nadar y jugar videojuegos. La computación impresiona de verdad."*
-
-## Lo que me apasiona
-
-- 🤖 Inteligencia artificial y aprendizaje automático
-- 📊 Ciencia de datos y automatización
-- 🛡️ Ciberseguridad y hacking ético
-- 🧩 Aprender sin parar :)
-
-## Conectemos
-
-[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/jose-JQ)
-[![Email](https://img.shields.io/badge/-Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:j26quiros@gmail.com)
-
-_✨ Construyamos el futuro juntos, con código, creatividad e innovación._
-
-</details>
 
 I'm highly passionate about computer science, driven by the power of **technological innovation** and the potential of **Data Science**, **Machine Learning**, and **Artificial Intelligence** to solve real-world problems.
 
