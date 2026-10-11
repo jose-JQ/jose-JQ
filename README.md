@@ -156,14 +156,14 @@ I’m extremely curious and always looking to expand my horizons.
 <p align="center">
   <a href="https://github.com/jose-JQ">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=jose-JQ&show_icons=true&include_all_commits=true&hide_rank=true&hide_border=true&title_color=E0A106&text_color=F4F0E6&icon_color=3CABA0&bg_color=12161C">
-      <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=jose-JQ&show_icons=true&include_all_commits=true&hide_rank=true&hide_border=true&title_color=A16207&text_color=1C1915&icon_color=0F6E66&bg_color=F6F3EC">
-      <img height="180" alt="José Quiros GitHub stats" src="https://github-readme-stats.vercel.app/api?username=jose-JQ&show_icons=true&include_all_commits=true&hide_rank=true&hide_border=true&title_color=A16207&text_color=1C1915&icon_color=0F6E66&bg_color=F6F3EC">
+      <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-theta.vercel.app/api?username=jose-JQ&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&title_color=E0A106&text_color=F4F0E6&icon_color=3CABA0&bg_color=12161C&border_color=24303A&ring_color=3CABA0">
+      <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-theta.vercel.app/api?username=jose-JQ&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&title_color=A16207&text_color=1C1915&icon_color=0F6E66&bg_color=F6F3EC&border_color=D4CBBA&ring_color=0F6E66">
+      <img height="180" alt="José Quiros GitHub stats" src="https://github-readme-stats-eight-theta.vercel.app/api?username=jose-JQ&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&title_color=A16207&text_color=1C1915&icon_color=0F6E66&bg_color=F6F3EC&border_color=D4CBBA&ring_color=0F6E66">
     </picture>
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=jose-JQ&layout=compact&langs_count=8&hide_border=true&title_color=E0A106&text_color=F4F0E6&bg_color=12161C">
-      <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=jose-JQ&layout=compact&langs_count=8&hide_border=true&title_color=A16207&text_color=1C1915&bg_color=F6F3EC">
-      <img height="180" alt="José Quiros most used languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jose-JQ&layout=compact&langs_count=8&hide_border=true&title_color=A16207&text_color=1C1915&bg_color=F6F3EC">
+      <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=jose-JQ&layout=compact&langs_count=8&hide_border=true&title_color=E0A106&text_color=F4F0E6&bg_color=12161C&border_color=24303A">
+      <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=jose-JQ&layout=compact&langs_count=8&hide_border=true&title_color=A16207&text_color=1C1915&bg_color=F6F3EC&border_color=D4CBBA">
+      <img height="180" alt="José Quiros most used languages" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=jose-JQ&layout=compact&langs_count=8&hide_border=true&title_color=A16207&text_color=1C1915&bg_color=F6F3EC&border_color=D4CBBA">
     </picture>
   </a>
 </p>
