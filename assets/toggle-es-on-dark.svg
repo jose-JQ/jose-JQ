@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="80" viewBox="0 0 200 80">
+  <path d="M0 2H160A38 38 0 0 1 198 40A38 38 0 0 1 160 78H0Z" fill="#E0A106"/>
+  <path d="M0 2H160A38 38 0 0 1 198 40A38 38 0 0 1 160 78H0" fill="none" stroke="#3CABA0" stroke-width="3" stroke-linejoin="round" stroke-linecap="butt"/>
+  
+  <text x="92" y="40.5" text-anchor="middle" dominant-baseline="central" fill="#12161C" font-family="Liberation Sans, Segoe UI, Helvetica, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="2">ES</text>
+</svg>

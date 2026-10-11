@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="80" viewBox="0 0 200 80">
+  <path d="M40 2H200V78H40A38 38 0 0 1 2 40A38 38 0 0 1 40 2Z" fill="#A16207"/>
+  <path d="M200 2H40A38 38 0 0 0 2 40A38 38 0 0 0 40 78H200" fill="none" stroke="#0F6E66" stroke-width="3" stroke-linejoin="round" stroke-linecap="butt"/>
+  <rect x="197" y="2" width="3" height="76" fill="#0F6E66"/>
+  <text x="108" y="40.5" text-anchor="middle" dominant-baseline="central" fill="#FFFCF7" font-family="Liberation Sans, Segoe UI, Helvetica, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="2">EN</text>
+</svg>
