@@ -39,7 +39,7 @@ Currently, I focus on bridging the gap between raw data and actionable intellige
 - [manpac](https://github.com/jose-JQ/manpac) — reading vehicle invoices with models, then checking the result
 - [Búsqueda IR](https://github.com/jose-JQ/busqueda_ir) — TF-IDF and BM25, with a React interface
 - [Quantic Search](https://github.com/jose-JQ/rag_multimodal) — retrieval from text and images together
-- [hci_tron_game](https://github.com/jose-JQ/hci_tron_game) — a game in TypeScript, with a small API beside it
+- [Imppel Key](https://github.com/jose-JQ/hci_tron_game) — password manager, with M2F 
 - [Fueguito](https://github.com/jose-JQ/Fueguito) — a little flame that follows the cursor
 - [Interpolador de funciones](https://github.com/jose-JQ/Interpolador-de-Funciones--ModSim) — an acoustic model
 
