@@ -39,7 +39,7 @@ Hoy trabajo en acortar la distancia entre el dato crudo y una decisión que sirv
 - [manpac](https://github.com/jose-JQ/manpac) — leer facturas de vehículos con modelos, y después revisar el resultado
 - [Búsqueda IR](https://github.com/jose-JQ/busqueda_ir) — TF-IDF y BM25, con una interfaz en React
 - [Quantic Search](https://github.com/jose-JQ/rag_multimodal) — recuperar a partir de texto e imágenes a la vez
-- [hci_tron_game](https://github.com/jose-JQ/hci_tron_game) — un juego en TypeScript, con una API pequeña al lado
+- [Imppel Key](https://github.com/jose-JQ/imppel_key) — un gestor de contraseñas multiplataforma, con M2F
 - [Fueguito](https://github.com/jose-JQ/Fueguito) — una llamita que sigue al cursor
 - [Interpolador de funciones](https://github.com/jose-JQ/Interpolador-de-Funciones--ModSim) — un modelo acústico
 
